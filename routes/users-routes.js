@@ -7,4 +7,5 @@ usersRouter.get('/:id', usersController.profilePage)
 usersRouter.get('/new', usersController.register)
 usersRouter.post('/', usersController.userAuth)
 
+
 module.exports = usersRouter;
