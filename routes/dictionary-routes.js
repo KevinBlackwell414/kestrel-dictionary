@@ -12,7 +12,7 @@ dictionaryRouter.post('/', dictionaryController.postWord)
 dictionaryRouter.get('/:id/edit', dictionaryController.editWord)
 dictionaryRouter.put('/:id', dictionaryController.updateWord)
 
-dictionaryRouter.delete('/:id', dictionaryController.destroy)
+dictionaryRouter.delete('/:id', dictionaryController.removeWord)
 
 
 module.exports = dictionaryRouter;
