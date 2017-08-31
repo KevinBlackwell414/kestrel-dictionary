@@ -75,3 +75,5 @@ dictionaryController.removeWord = (req, res) => {
         res.status(400).json(err);
       });
   };
+
+module.exports = dictionaryController
