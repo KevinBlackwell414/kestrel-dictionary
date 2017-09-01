@@ -1,5 +1,5 @@
 const express = require('express');
-const dictionaryController = require('../controllers/dictionary-controller');
+const dictionaryController = require('../controllers/dictionaryController');
 const dictionaryRouter = express.Router();
 
 dictionaryRouter.get('/', dictionaryController.index)
@@ -16,3 +16,4 @@ dictionaryRouter.delete('/:id', dictionaryController.removeWord)
 
 
 module.exports = dictionaryRouter;
+

@@ -31,7 +31,7 @@ dictionaryController.addWord = (req, res) => {
 }
 
 dictionaryController.postWord = (req, res) => {
-    Dictionary.postWord({
+    Dictionary.create({
         word: req.body.word,
         definition: req.body.definition
     })
