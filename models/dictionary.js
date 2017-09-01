@@ -3,7 +3,7 @@ const db = require('../db/config');
 const Dictionary = {};
 
 Dictionary.findAll = () => {
-  return db.query('SELECT * FROM dictionary')
+  return db.many('SELECT * FROM dictionary')
 }
 
 Dictionary.findById = id => {

@@ -4,13 +4,13 @@ const dictionaryController = {}
 
 dictionaryController.index = (req, res) => {
     Dictionary.findAll()
-    .then ((dictionary) => {
+        .then ((dictionary) => {
         res.render('dictionary/index', {
             dictionary: dictionary
         })
     })
     .catch((err) => {
-        res.status(400).json(err)
+        console.log('Index Controller Malfunction', err)
     })
 }
 
@@ -22,7 +22,7 @@ dictionaryController.selectWord = (req, res) => {
         })
     })
     .catch((err) => {
-        res.status(400).json(err)
+        console.log('Select Controller Malfunction', err)
     })
 }
 
@@ -39,7 +39,7 @@ dictionaryController.postWord = (req, res) => {
         res.redirect(`/dictionary/${dictionary.id}`)
     })
     .catch(err => {
-        res.status(400).json(err);
+        console.log('Post Controller Malfunction')
     });
 };
 
@@ -62,7 +62,7 @@ dictionaryController.updateWord = (req, res) => {
         res.redirect(`/dictionary/${req.params.id}`)
     })
       .catch(err => {
-        res.status(400).json(err);
+        console.log('Update Controller Malfunction')
     })
 }
 
@@ -72,7 +72,7 @@ dictionaryController.removeWord = (req, res) => {
         res.redirect('/dictionary')
       })
       .catch(err => {
-        res.status(400).json(err);
+        console.log('Delete Controller Malfunction')
       });
   };
 
