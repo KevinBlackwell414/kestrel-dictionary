@@ -1,13 +1,8 @@
 const express = require('express');
-const usersController = require('../controllers/usersController');
 const usersRouter = express.Router();
+const usersController = require('../controllers/usersController');
+const authHelpers = require('../services/auth/auth-helper');
 
-usersRouter.get('/', usersController.loginPage)
-
-usersRouter.get('/:id', usersController.profilePage)
-
-usersRouter.get('/new', usersController.register)
-usersRouter.post('/', usersController.userAuth)
-
+usersRouter.get('/', authHelpers.loginRequired, usersController.index);
 
 module.exports = usersRouter;

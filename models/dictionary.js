@@ -22,15 +22,22 @@ Dictionary.update = (dictionary, id) => {
     )
 }
 
-Dictionary.create = dictionary => {
+Dictionary.create = (dictionary, userid) => {
     return db.one(
       `
         INSERT INTO dictionary
-        (word, definition)
-        VALUES ($1, $2) RETURNING *
+        (word, definition, usage, user_id)
+        VALUES ($1, $2, $3, $4) RETURNING *
       `,
-      [dictionary.word, dictionary.definition]
+      [dictionary.word, dictionary.definition, dictionary.usage, userid]
     );
+};
+
+Dictionary.destroy = (id) => {
+  return db.none(`
+    DELETE FROM dictionary
+    WHERE id = $1
+  `, [id]);
 };
 
 module.exports = Dictionary;

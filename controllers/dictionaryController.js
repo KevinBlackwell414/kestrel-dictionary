@@ -28,18 +28,22 @@ dictionaryController.selectWord = (req, res) => {
 
 dictionaryController.addWord = (req, res) => {
     res.render('dictionary/addWord')
+    .catch((err) => {
+        console.log('Add Controller Malfunction', err)
+    })
 }
 
 dictionaryController.postWord = (req, res) => {
     Dictionary.create({
         word: req.body.word,
-        definition: req.body.definition
-    })
+        definition: req.body.definition,
+        usage: req.body.usage
+    }, req.user.id)
     .then(dictionary => {
         res.redirect(`/dictionary/${dictionary.id}`)
     })
     .catch(err => {
-        console.log('Post Controller Malfunction')
+        console.log('Post Controller Malfunction', err)
     });
 };
 
@@ -62,7 +66,7 @@ dictionaryController.updateWord = (req, res) => {
         res.redirect(`/dictionary/${req.params.id}`)
     })
       .catch(err => {
-        console.log('Update Controller Malfunction')
+        console.log('Update Controller Malfunction', err)
     })
 }
 

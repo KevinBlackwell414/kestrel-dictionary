@@ -1,6 +1,6 @@
 \connect kestrel_dictionary
 
-INSERT INTO users(email, user_name)
+INSERT INTO users(email, userName)
 VALUES
 ('daniel@kestral.com', 'DWeezyInTheTrap'),
 ('gary@kestral.com', 'GareBear'),

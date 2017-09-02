@@ -1,0 +1,20 @@
+body {
+    background-image: url('../images/skyWallpaper.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: skyblue;
+}
+
+.title {
+    font-size: 100px;
+    color: white;
+    text-align: center;
+}
+
+a.button {
+    text-decoration: none;
+    background-color:rgba(226, 230, 251, 0.54);
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+}

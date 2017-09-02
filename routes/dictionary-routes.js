@@ -1,18 +1,21 @@
 const express = require('express');
 const dictionaryController = require('../controllers/dictionaryController');
 const dictionaryRouter = express.Router();
+const authHelpers = require('../services/auth/auth-helper');
 
-dictionaryRouter.get('/', dictionaryController.index)
+dictionaryRouter.get('/', authHelpers.loginRequired, dictionaryController.index)
 
-dictionaryRouter.get('/:id', dictionaryController.selectWord)
+dictionaryRouter.get('/new', authHelpers.loginRequired, (req, res) => {
+    res.render('dictionary/addWord')
+})
+dictionaryRouter.post('/', authHelpers.loginRequired, dictionaryController.postWord)
 
-dictionaryRouter.get('/new', dictionaryController.addWord)
-dictionaryRouter.post('/', dictionaryController.postWord)
+dictionaryRouter.get('/:id', authHelpers.loginRequired, dictionaryController.selectWord)
 
-dictionaryRouter.get('/:id/editWord', dictionaryController.editWord)
-dictionaryRouter.put('/:id', dictionaryController.updateWord)
+dictionaryRouter.get('/:id/editWord', authHelpers.loginRequired, dictionaryController.editWord)
+dictionaryRouter.put('/:id', authHelpers.loginRequired, dictionaryController.updateWord)
 
-dictionaryRouter.delete('/:id', dictionaryController.removeWord)
+dictionaryRouter.delete('/:id', authHelpers.loginRequired, dictionaryController.removeWord)
 
 
 module.exports = dictionaryRouter;

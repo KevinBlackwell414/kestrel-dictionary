@@ -1,29 +1,32 @@
 const Users = require('../models/users')
+const bcrypt = require('bcryptjs');
 
 const usersController = {}
 
-usersController.loginPage = ((req, res) => {
-    res.render('users/loginPage')
-})
 
-usersController.profilePage = ((req, res) => {
-    Users.findById(req.params.id)
-    .then((user) => {
-        res.render('users/profilePage', {
-            user: user
-        })
-    })
-    .catch((err) => {
-        res.status(400).json(err)
-    })
-})
-
-usersController.register = ((req, res) => {
-
-})
-
-usersController.userAuth = ((req, res) => {
-    
-})
+usersController.index = (req, res) => {
+    res.json({
+      user: req.user,
+      data: 'Put a user profile on this route'
+    });
+}
+  
+usersController.create = (req, res) => {
+    const salt = bcrypt.genSaltSync();
+    const hash = bcrypt.hashSync(req.body.password, salt);
+    Users.create({
+      username: req.body.username,
+      email: req.body.email,
+      password_digest: hash,
+    }).then(user => {
+      req.login(user, (err) => {
+        if (err) return next(err);
+        res.redirect('/dictionary');
+      });
+    }).catch(err => {
+      console.log(err);
+      res.status(500).json({error: err});
+    });
+}
 
 module.exports = usersController

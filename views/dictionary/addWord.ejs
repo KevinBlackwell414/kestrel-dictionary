@@ -1,9 +1,16 @@
-<% include ../partials/boilerplate %>
-
-<form method="POST" action="/dictionary">
-  <input type="text" name="name" placeholder="Word" />
-  <input type="text" name="definition" placeholder="Definition" />
-  <input type="submit" value="Add That Word!" />
-</form>
-
-<% include ../partials/end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/dictionary">
+      <input type="text" name="word" placeholder="Word" />
+      <input type="text" name="definition" placeholder="Definition" />
+      <input type="submit" value="Add That Word!" />
+    </form>  
+</body>
+</html>

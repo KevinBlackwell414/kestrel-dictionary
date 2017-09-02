@@ -9,6 +9,7 @@
 <body>
     <div class="word">
         <h2><%= dictionary.word %></h2>
+        <a href="/dictionary">Return back to index</a>
         <p><%= dictionary.definition %></p>
         <a href="/dictionary/<%=dictionary.id%>/editWord">Edit</a>
         <form class="delete" action="/dictionary/<%=dictionary.id%>?_method=DELETE" method="POST">
