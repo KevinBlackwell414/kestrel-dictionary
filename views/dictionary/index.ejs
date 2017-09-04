@@ -7,18 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Kestrel Dictionary</h1>
+    <h1 class="title">Kestrel Dictionary</h1>
 
     <% users => { %>
         <h3>What's up <%= users.userName %></h3>
     <% } %>
+
+    <a href="auth/logout">Logout?</a>
 
     <a href="dictionary/new">Add a Word<a>
     <% dictionary.forEach(dictionary => { %>
         <div class="word">
           <h2><%= dictionary.word %></h2>
           <p>
-              Definition <br> <%= dictionary.definition %>
+              Definition <br> <%= dictionary.definition %> <br>
+              Usage <br> <%= dictionary.usage %>
         </p>
           <a href="/dictionary/<%=dictionary.id%>">View the Word?</a>
         </div>

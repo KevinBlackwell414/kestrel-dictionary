@@ -13,8 +13,26 @@ body {
 
 a.button {
     text-decoration: none;
+    text-align: center;
     background-color:rgba(226, 230, 251, 0.54);
     color: black;
     padding: 10px;
+    margin: 10px;
+    margin-bottom: 10px;
     border-radius: 8px;
+}
+
+.container {
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 160, .25);
+    border-radius: 12px;
+}
+
+.buttonContainer {
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }

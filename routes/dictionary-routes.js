@@ -2,8 +2,9 @@ const express = require('express');
 const dictionaryController = require('../controllers/dictionaryController');
 const dictionaryRouter = express.Router();
 const authHelpers = require('../services/auth/auth-helper');
+const quoteHelpers = require('../services/quote-helper')
 
-dictionaryRouter.get('/', authHelpers.loginRequired, dictionaryController.index)
+dictionaryRouter.get('/', authHelpers.loginRequired, dictionaryController.index, quoteHelpers.getQuoteFromAPI, dictionaryController.sendAPIQuote)
 
 dictionaryRouter.get('/new', authHelpers.loginRequired, (req, res) => {
     res.render('dictionary/addWord')

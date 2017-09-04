@@ -4,15 +4,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
+        <link rel="stylesheet" href="/styles/auth.css">
+        <link rel="icon" href="/images/kestrel.png">
+        <title>Kestrel Dictionary - Register</title>
     </head>
     <body>
-        <div>
+        <h1 class="title">Kestrel Dictionary</h1>
+        <h3 class="header">Let's Get Started!</h3>
+        <div class="container">
             <form method='POST' action='/auth/register'>
-            <input name='username' type='text' placeholder='username' required />
-            <input name='email' type='email' placeholder='email' required />
-            <input name='password' type='password' placeholder='password' required />
-            <input type='submit' value='Register!' />
+            <div><input name='username' type='text' placeholder='username' required /></div>
+            <div><input name='email' type='email' placeholder='email' required /></div>
+            <div><input name='password' type='password' placeholder='password' required /></div>
+            <div><input type='submit' value='Register!' /></div>
             </form>
         </div>
     </body>
