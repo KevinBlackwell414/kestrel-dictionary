@@ -3,7 +3,7 @@ const Dictionary = require('../models/dictionary')
 const dictionaryController = {}
 
 dictionaryController.index = (req, res) => {
-    Dictionary.findAll()
+    Dictionary.findAll(req.user.id)
         .then ((dictionary) => {
         res.render('dictionary/index', {
             dictionary: dictionary

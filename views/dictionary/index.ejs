@@ -9,29 +9,30 @@
     <title>Kestrel Dictionary: All Words</title>
 </head>
 <body>
-    <div id="topContainer">
-        <h1 class="title">Kestrel Dictionary</h1>
+    <div id="wrap">    
+        <div id="topContainer">
+            <h1 class="title">Kestrel Dictionary</h1>
 
-            <h1>What's up bro?</h1>
+                <h1>What's up bro? <%= dictionary.userName %></h1>
 
-        <a href="auth/logout">Logout?</a>
+            <a href="auth/logout">Logout?</a>
 
-        <a href="dictionary/new">Add a Word</a>
-    </div>
-    <br><br><br>
-    <% dictionary.forEach(dictionary => { %>
-        <div class="word">
-          <h2 class="header"><%= dictionary.word %></h2>
-          <p>
-              <span class="subheader">Definition</span> <br>
-              <span class="content"><%= dictionary.definition %></span> <br>
-              <br>
-              <span class="subheader">Usage</span> <br> 
-              <span class="content"><%= dictionary.usage %></span>
-        </p>
-          <a href="/dictionary/<%=dictionary.id%>">View the Word?</a>
+            <a href="dictionary/new">Add a Word</a>
         </div>
-      <% }) %>
-      
+        <br><br><br>
+        <% dictionary.forEach(dictionary => { %>
+            <div class="word">
+            <h2 class="header"><%= dictionary.word %></h2>
+            <p>
+                <span class="subheader">Definition</span> <br>
+                <span class="content"><%= dictionary.definition %></span> <br>
+                <br>
+                <span class="subheader">Usage</span> <br> 
+                <span class="content"><%= dictionary.usage %></span>
+            </p>
+            <a href="/dictionary/<%=dictionary.id%>">View the Word?</a>
+            </div>
+        <% }) %>
+    </div>
 </body>
 </html>

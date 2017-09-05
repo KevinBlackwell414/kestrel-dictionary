@@ -2,12 +2,17 @@ const db = require('../db/config');
 
 const Dictionary = {};
 
-Dictionary.findAll = () => {
-  return db.many('SELECT * FROM dictionary')
+Dictionary.findAll = (id) => {
+  return db.many(`
+    SELECT * FROM dictionary
+    `)
 }
 
 Dictionary.findById = id => {
-    return db.oneOrNone(`SELECT * FROM dictionary WHERE id = $1`, [id])
+    return db.oneOrNone(`
+      SELECT * FROM dictionary
+      WHERE id = $1
+      `, [id])
 }
 
 Dictionary.update = (dictionary, id) => {
