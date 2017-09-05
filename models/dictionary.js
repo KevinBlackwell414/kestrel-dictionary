@@ -2,10 +2,10 @@ const db = require('../db/config');
 
 const Dictionary = {};
 
-Dictionary.findAll = (id) => {
+Dictionary.findAll = () => {
   return db.many(`
     SELECT * FROM dictionary
-    `, [id])
+    `)
 }
 
 Dictionary.findById = id => {
