@@ -1,5 +1,3 @@
-\connect kestrel_dictionary
-
 INSERT INTO dictionary(word, definition, usage, user_id)
 VALUES
 ('lit', 'When something is over the top fun, and extremely desired by people', 'Man, that concert was so lit! I cannot wait for the next one!', 1),
