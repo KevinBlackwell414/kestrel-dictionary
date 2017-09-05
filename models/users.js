@@ -19,10 +19,11 @@ Users.create = user => {
 };
 
 Users.findUserWords = id => {
-  return db.query(`
-    SELECT * FROM dictionary
+  return db.many(`
+    SELECT * FROM dictionary 
+    JOIN users ON user_id = users.id 
     WHERE user_id = $1
-  `, [id]);
+  `, [id])
 };
 
 module.exports = Users;

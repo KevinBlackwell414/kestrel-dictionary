@@ -5,6 +5,7 @@ const dictionaryController = {}
 dictionaryController.index = (req, res) => {
     Dictionary.findAll(req.user.id)
         .then ((dictionary) => {
+            console.log(dictionary)
         res.render('dictionary/index', {
             dictionary: dictionary
         })

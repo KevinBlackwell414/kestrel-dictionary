@@ -30,6 +30,11 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+  res.locals.users = req.users;
+  next();
+})
+
 const authRouter = require('./routes/auth-routes');
 app.use('/auth', authRouter);
 
