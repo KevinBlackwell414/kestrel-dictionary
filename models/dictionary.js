@@ -4,7 +4,7 @@ const Dictionary = {};
 
 Dictionary.findAll = (id) => {
   return db.many(`
-    SELECT * FROM dictionary JOIN users ON user_id = users.id WHERE user_id = $1
+    SELECT * FROM dictionary
     `, [id])
 }
 
