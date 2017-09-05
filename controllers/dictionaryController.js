@@ -60,7 +60,8 @@ dictionaryController.editWord = (req, res) => {
 dictionaryController.updateWord = (req, res) => {
     Dictionary.update({
         word: req.body.word,
-        definition: req.body.definition
+        definition: req.body.definition,
+        usage: req.body.usage
       }, req.params.id)
       .then(() => {
         res.redirect(`/dictionary/${req.params.id}`)

@@ -1,0 +1,77 @@
+body {
+    background-image: url('../images/birdsThree.jpg');
+    background-color: grey;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    background-color:rgba(226, 230, 251, 0.54);
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 100px;
+    color: black;
+    text-align: center;
+}
+
+.header {
+    font-size: 45px;
+    color: white;
+    text-align: center;
+}
+
+.subheader {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+
+#topContainer {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.word {
+    text-align: center;
+    background-color: rgba(0, 9, 69, 0.58);
+    width: 40%;
+    margin: 0 auto 30px;
+    padding: 5px 0px 20px 0px;
+    border-radius: 12px;
+}
+
+input[type=text] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0 8px 150px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    text-decoration: none;
+    text-align: center;
+    background-color:rgba(226, 230, 251, 0.54);
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#form {
+    width: 45%;
+    margin: 0 auto;
+    align-content: center;
+    background-color: rgba(1, 0, 42, 0.73);
+    padding: 50px;
+    border-radius: 25px
+}
+
+#add {
+    margin-left: 300px;
+}

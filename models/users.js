@@ -5,14 +5,14 @@ const Users = {};
 Users.findByUserName = userName => {
   return db.oneOrNone(`
     SELECT * FROM users
-    WHERE userName = $1
+    WHERE "userName" = $1
   `, [userName]);
 };
 
 Users.create = user => {
   return db.one(`
     INSERT INTO users
-    (userName, email, password_digest)
+    ("userName", email, password_digest)
     VALUES ($1, $2, $3)
     RETURNING *
   `, [user.username, user.email, user.password_digest]);

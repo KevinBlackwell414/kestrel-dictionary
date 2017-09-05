@@ -4,13 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="/styles/content.css">
+  <link rel="icon" href="/images/kestrel.png">
+  <title>Kestrel Dictionary: Add Word</title>
 </head>
 <body>
-    <form method="POST" action="/dictionary">
-      <input type="text" name="word" placeholder="Word" />
-      <input type="text" name="definition" placeholder="Definition" />
-      <input type="submit" value="Add That Word!" />
-    </form>  
+    <div id="topContainer">
+        <h1 class="title">Kestrel Dictionary</h1>
+
+            <h1>What's up bro?</h1>
+
+        <a href="auth/logout">Logout?</a>
+
+        <a href="/dictionary">Go Back</a>
+    </div>
+    <br><br><br>
+
+    <div id="form">
+      <form method="POST" action="/dictionary">
+        <input type="text" name="word" placeholder="Word" />
+        <input type="text" name="definition" placeholder="Definition" />
+        <input type="text" name="usage" placeholder="Usage" /> <br>
+        <input id="add" type="submit" value="Add That Word!" />
+      </form>  
+    </div>
 </body>
 </html>

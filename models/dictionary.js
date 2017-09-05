@@ -15,10 +15,11 @@ Dictionary.update = (dictionary, id) => {
       `
         UPDATE dictionary SET
         word = $1,
-        definition = $2
-        WHERE id = $3
+        definition = $2,
+        usage = $3
+        WHERE id = $4
       `,
-      [dictionary.word, dictionary.definition, id]
+      [dictionary.word, dictionary.definition, dictionary.usage, id]
     )
 }
 

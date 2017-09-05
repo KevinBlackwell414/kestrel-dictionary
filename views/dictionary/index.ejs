@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles/content.css">
+    <link rel="icon" href="/images/kestrel.png">
+    <title>Kestrel Dictionary: All Words</title>
 </head>
 <body>
-    <h1 class="title">Kestrel Dictionary</h1>
+    <div id="topContainer">
+        <h1 class="title">Kestrel Dictionary</h1>
 
-    <% users => { %>
-        <h3>What's up <%= users.userName %></h3>
-    <% } %>
+            <h1>What's up bro?</h1>
 
-    <a href="auth/logout">Logout?</a>
+        <a href="auth/logout">Logout?</a>
 
-    <a href="dictionary/new">Add a Word<a>
+        <a href="dictionary/new">Add a Word</a>
+    </div>
+    <br><br><br>
     <% dictionary.forEach(dictionary => { %>
         <div class="word">
-          <h2><%= dictionary.word %></h2>
+          <h2 class="header"><%= dictionary.word %></h2>
           <p>
-              Definition <br> <%= dictionary.definition %> <br>
-              Usage <br> <%= dictionary.usage %>
+              <span class="subheader">Definition</span> <br>
+              <span class="content"><%= dictionary.definition %></span> <br>
+              <br>
+              <span class="subheader">Usage</span> <br> 
+              <span class="content"><%= dictionary.usage %></span>
         </p>
           <a href="/dictionary/<%=dictionary.id%>">View the Word?</a>
         </div>

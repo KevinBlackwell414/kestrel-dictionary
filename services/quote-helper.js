@@ -15,5 +15,5 @@ function getQuoteFromAPI(req, res, next) {
 }
 
 module.exports = {
-  getQuoteFromAPI,
+  getQuoteFromAPI
 }
