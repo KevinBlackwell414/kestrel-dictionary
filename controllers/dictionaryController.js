@@ -81,10 +81,4 @@ dictionaryController.removeWord = (req, res) => {
       });
   };
 
-dictionaryController.sendAPIQuote = (req, res) => {
-    res.json({ 
-      quote: res.locals.kestrelDef.list[0].definition,
-    })
-}
-
 module.exports = dictionaryController

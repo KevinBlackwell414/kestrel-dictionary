@@ -75,3 +75,17 @@ input[type=submit] {
 #add {
     margin-left: 300px;
 }
+
+.kestrel {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center
+}
+
+#wrap {
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 18px;
+    background-color: rgba(255, 255, 255, 0.44);
+}

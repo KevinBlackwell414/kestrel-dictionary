@@ -4,7 +4,12 @@ const dictionaryRouter = express.Router();
 const authHelpers = require('../services/auth/auth-helper');
 const quoteHelpers = require('../services/quote-helper')
 
-dictionaryRouter.get('/', authHelpers.loginRequired, dictionaryController.index, quoteHelpers.getQuoteFromAPI, dictionaryController.sendAPIQuote)
+console.log(authHelpers.loginRequired)
+console.log(quoteHelpers.getQuoteFromAPI)
+console.log(dictionaryController.sendAPIQuote)
+console.log(dictionaryController.index)
+
+dictionaryRouter.get('/', authHelpers.loginRequired, quoteHelpers, dictionaryController.index)
 
 dictionaryRouter.get('/new', authHelpers.loginRequired, (req, res) => {
     res.render('dictionary/addWord')
